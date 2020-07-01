@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Encoder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEN-d7-FfA" customClass="DrawingView" customModule="Encoder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="85c-u1-YBB"/>
+                                    <constraint firstAttribute="height" constant="414" id="ILA-x8-kSW"/>
+                                </constraints>
+                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EIn-bf-bmH">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="VAE-dn-br1"/>
+                                    <constraint firstAttribute="height" constant="414" id="nZc-gp-06E"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8k-dd-7xD">
+                                <rect key="frame" x="29" y="815" width="69" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Load IMG"/>
+                                <connections>
+                                    <action selector="loadIMG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xr4-3X-F2Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtC-5c-og9">
+                                <rect key="frame" x="121" y="815" width="69" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save IMG"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jUU-JS-FCr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdF-Bx-6Dy">
+                                <rect key="frame" x="341" y="815" width="39" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearDrawing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T0b-Z3-pNX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Y-Pb-cBq">
+                                <rect key="frame" x="255" y="815" width="55" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Encode"/>
+                                <connections>
+                                    <action selector="encode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7v-hk-s3g"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3o5-bT-t77">
+                                <rect key="frame" x="119.5" y="63" width="175" height="32"/>
+                                <segments>
+                                    <segment title="64"/>
+                                    <segment title="126"/>
+                                    <segment title="256"/>
+                                    <segment title="512"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeRES:" destination="BYZ-38-t0r" eventType="valueChanged" id="aQK-kx-zAQ"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RdF-Bx-6Dy" firstAttribute="leading" secondItem="Q0Y-Pb-cBq" secondAttribute="trailing" constant="31" id="4R8-ed-Fhn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FtC-5c-og9" secondAttribute="bottom" constant="17" id="8ks-Je-xuJ"/>
+                            <constraint firstItem="3o5-bT-t77" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="AwP-Vt-Pa2"/>
+                            <constraint firstItem="k8k-dd-7xD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="JkZ-tE-6a3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k8k-dd-7xD" secondAttribute="bottom" constant="17" id="RlX-Sc-hYQ"/>
+                            <constraint firstItem="EIn-bf-bmH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jnz-oI-oSU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RdF-Bx-6Dy" secondAttribute="bottom" constant="17" id="ltg-dl-ACK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q0Y-Pb-cBq" secondAttribute="bottom" constant="17" id="mWV-sc-rP8"/>
+                            <constraint firstItem="pEN-d7-FfA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ms2-0T-zw1"/>
+                            <constraint firstItem="3o5-bT-t77" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t59-zU-JZF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RdF-Bx-6Dy" secondAttribute="trailing" constant="34" id="thg-Fx-cML"/>
+                            <constraint firstItem="EIn-bf-bmH" firstAttribute="leading" secondItem="pEN-d7-FfA" secondAttribute="leading" id="tvY-zX-zJ2"/>
+                            <constraint firstItem="FtC-5c-og9" firstAttribute="leading" secondItem="k8k-dd-7xD" secondAttribute="trailing" constant="23" id="twB-2x-ad9"/>
+                            <constraint firstItem="pEN-d7-FfA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vIT-y3-ubu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="drawingView" destination="pEN-d7-FfA" id="USk-JJ-oAc"/>
+                        <outlet property="resultImageView" destination="EIn-bf-bmH" id="Gqb-oU-6aL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

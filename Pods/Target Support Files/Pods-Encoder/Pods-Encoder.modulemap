@@ -1,0 +1,6 @@
+framework module Pods_Encoder {
+  umbrella header "Pods-Encoder-umbrella.h"
+
+  export *
+  module * { export * }
+}
